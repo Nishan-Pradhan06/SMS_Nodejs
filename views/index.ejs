@@ -7,8 +7,16 @@
         <link rel="stylesheet" href="../css/add_students.css">
         <link rel="stylesheet" href="../css/styles.css">
         <link rel="stylesheet" href="../css/students.css">
+
         <title>Student Management Dashboard</title>
     </head>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+
+    header {
+        font-family: 'Poppins', sans-serif;
+    }
+</style>
 
     <body>
         <!-- header top navigation bar -->
@@ -59,7 +67,7 @@
                                 <th>Name</th>
                                 <th>Address</th>
                                 <th>Contact</th>
-                                <th>Class</th>
+                                <th>Faculty</th>
                                 <th>Blood Group</th>
                                 <th>Actions</th>
                             </tr>
@@ -82,7 +90,7 @@
             </section>
             <!-- adding students -->
             <section id="add-students">
-                <div class="container">
+                <div class="std-container">
                     <h1>Add Student Details</h1>
                     <form>
                         <label for="name">Name:</label>
@@ -92,8 +100,7 @@
                         <input type="text" id="address" name="address" required>
 
                         <label for="contact">Contact:</label>
-                        <input type="tel" id="contact" name="contact"
-                            required>
+                        <input type="tel" id="contact" name="contact" required>
 
                         <label for="class">Faculty:</label>
                         <select id="class" name="class" required>
@@ -111,33 +118,7 @@
                 </div>
             </section>
         </main>
-        <script>
-        // JavaScript for handling navigation clicks
-        const navLinks = document.querySelectorAll('.sidebar a');
-        const contentSections = document.querySelectorAll('.content section');
-        contentSections.forEach(section => section.style.display = 'none');
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault(); // Prevent the default link behavior
-
-                // Remove 'active' class from all links
-                navLinks.forEach(navLink => navLink.classList.remove('active'));
-
-                // Add 'active' class to the clicked link
-                link.classList.add('active');
-
-                // Hide all content sections
-                contentSections.forEach(section => section.style.display = 'none');
-
-                // Show the corresponding content section based on the href
-                const targetId = link.getAttribute('href').substring(1);
-                const targetSection = document.getElementById(targetId);
-                if (targetSection) {
-                    targetSection.style.display = 'block';
-                }
-            });
-        });
-    </script>
+        <script src="../js/script.js"></script>
     </body>
 
 </html>

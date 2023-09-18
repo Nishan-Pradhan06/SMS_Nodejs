@@ -1,7 +1,11 @@
 /* Reset some default styles for better consistency */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
 
-body, h1, table, th, td {
+body,
+h1,
+table,
+th,
+td {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
@@ -13,9 +17,9 @@ body {
 }
 
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
     background-color: #fff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
@@ -50,8 +54,9 @@ h1 {
 }
 
 .btn {
-    padding: 8px 16px;
-    margin-right: 8px;
+    width: 100px;
+    padding: 10px 16px;
+    margin-right: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -66,3 +71,7 @@ h1 {
     background-color: #F44336;
     color: #fff;
 }
+
+/* .delete-btn:hover {
+    background-color: #29201f;
+} */

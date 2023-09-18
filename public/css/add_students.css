@@ -6,7 +6,7 @@ body {
     background-color: #f0f0f0;
 }
 
-.container {
+.std-container {
     max-width: 500px;
     margin: 0 auto;
     padding: 20px;
