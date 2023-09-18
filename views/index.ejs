@@ -7,7 +7,6 @@
         <link rel="stylesheet" href="../css/add_students.css">
         <link rel="stylesheet" href="../css/styles.css">
         <link rel="stylesheet" href="../css/students.css">
-
         <title>Student Management Dashboard</title>
     </head>
     <style>
@@ -39,18 +38,6 @@
                             Students</a></li>
                     <li><a href="#add-students" id="add-student-link">Add
                             Student</a></li>
-                    <!-- <li><a href="#">Teachers</a>
-                        <ul>
-                            <li><a href="#">View Teachers</a></li>
-                            <li><a href="#">Add Teacher</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="courses">Courses</a>
-                        <ul>
-                            <li><a href="#">View Courses</a></li>
-                            <li><a href="#">Add Course</a></li>
-                        </ul>
-                    </li> -->
                 </ul>
             </nav>
         </aside>
@@ -90,32 +77,7 @@
             </section>
             <!-- adding students -->
             <section id="add-students">
-                <div class="std-container">
-                    <h1>Add Student Details</h1>
-                    <form>
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required>
-
-                        <label for="address">Address:</label>
-                        <input type="text" id="address" name="address" required>
-
-                        <label for="contact">Contact:</label>
-                        <input type="tel" id="contact" name="contact" required>
-
-                        <label for="class">Faculty:</label>
-                        <select id="class" name="class" required>
-                            <option value="Grade 10">BCA</option>
-                            <option value="Grade 11">BBA</option>
-                            <option value="Grade 12">BHM</option>
-                        </select>
-
-                        <label for="bloodgroup">Blood Group:</label>
-                        <input type="text" id="bloodgroup" name="bloodgroup">
-
-                        <button type="submit" class="btn submit-btn">Submit</button>
-                        <button type="reset" class="btn reset-btn">Reset</button>
-                    </form>
-                </div>
+                <%- include("createStudents") %>
             </section>
         </main>
         <script src="../js/script.js"></script>

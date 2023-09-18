@@ -10,6 +10,20 @@ app.get('/', (req, res) => {
 //provding acess to the public floder where all the css and js file included
 app.use(express.static("public/"))
 
+//adding database mysql
+require("./model/index")
+
+//rendering createStudents form page
+app.get('createStudents', (req, res) => {
+    res.render("createStudents")
+})
+
+//creating post methond to create or add the data
+app.post('/createStudents', (req, res) => {
+    const { fullName, address, contact, faculty, bloodGroup } = res.body
+    
+})
+
 
 //setting the port on 8000  
 app.listen(8000, () => {

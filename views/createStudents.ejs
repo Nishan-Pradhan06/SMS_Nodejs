@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>adding-students</title>
+        <!-- <link rel="stylesheet" href="../css/add_students.css"> -->
+        <link rel="stylesheet" href="../public/css/add_students.css">
+    </head>
+    <body>
+
+        <div class="std-container">
+            <h1>Add Student Details</h1>
+            <form method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="contact">Contact:</label>
+                <input type="tel" id="contact" name="contact" required>
+
+                <label for="class">Faculty:</label>
+                <select id="class" name="class" required>
+                    <option value="Grade 10">BCA</option>
+                    <option value="Grade 11">BBA</option>
+                    <option value="Grade 12">BHM</option>
+                </select>
+
+                <label for="bloodgroup">Blood Group:</label>
+                <input type="text" id="bloodgroup" name="bloodgroup">
+
+                <button type="submit" class="btn submit-btn">Submit</button>
+                <button type="reset" class="btn reset-btn">Reset</button>
+            </form>
+        </div>
+
+    </body>
+</html>
