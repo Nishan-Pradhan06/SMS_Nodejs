@@ -4,14 +4,20 @@ const app = express() //calling the express in app varible
 
 app.set('view engine', 'ejs') // setting the  view engine to ejs
 
-app.get('/', (req, res) => {
-    res.render("index")//rendering index page                           
+app.get("/", async (req, res) => {
+    const std_management = await studentsmanagement.findAll()
+    console.log(std_management.length)
+    res.render("index", { studentsmanagement: std_management, allstudents: std_management.length })//rendering index page                           
 })
 
-//rendering dashboard form page
-app.get('/dashboard', (req, res) => {
-    res.render("dashboard")
-})
+// //rendering dashboard form page
+// app.get("/dashboard", async (req, res) => {
+//     const allstudent = await studentsmanagement.findAll()
+//     // console.log(allstudent.length)
+//     res.render("dashboard");
+
+//     // res.render("dashboard")
+// })
 
 
 //provding acess to the public floder where all the css and js file included
@@ -21,7 +27,7 @@ app.use(express.static("public/"))
 require("./model/index")
 
 //rendering createStudents form page
-app.get('/createStudents', (req, res) => {
+app.get("/createStudents", (req, res) => {
     res.render("createStudents")
 })
 
@@ -30,8 +36,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //creating post methond to create or add the data
-app.post('/addStudents', async (req, res) => {
-    console.log(req.body)
+app.post("/addStudents", async (req, res) => {
+    // console.log(req.body)
     const name = req.body.name
     const address = req.body.address
     const contact = req.body.contact
@@ -52,6 +58,6 @@ app.post('/addStudents', async (req, res) => {
 
 
 //setting the port on 8000  
-app.listen(8000, () => {
-    console.log("Server is running on 8000 port")
+app.listen(3000, () => {
+    console.log("Server is running on 3000 port")
 })

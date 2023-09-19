@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../css/add_students.css">
+        <!-- <link rel="stylesheet" href="../css/add_students.css"> -->
         <link rel="stylesheet" href="../css/styles.css">
         <link rel="stylesheet" href="../css/students.css">
         <title>Student Management Dashboard</title>
@@ -19,24 +19,15 @@
 
     <body>
         <!-- header top navigation bar -->
-        <header>
-            <div class="logo"><img src="../img/logo.png" alt="img"
-                    style="height: 60px;width: 60px;"></div>
-            <div class="user-menu">
-                <span>Welcome, Admin!</span>
-                <a href="#">Profile</a>
-                <a href="#">Notifications</a>
-                <a href="#">Logout</a>
-            </div>
-        </header>
+        <%- include("header") %>
         <!-- side navigation bar -->
         <aside>
             <nav class="sidebar">
                 <ul>
-                    <li><a href="#dashboard" id="dashboard-link">Dashboard</a></li>
-                    <li><a href="#students" id="view-students-link">View
+                    <li><a href="/dashboard" id="dashboard-link">Dashboard</a></li>
+                    <li><a href="/students" id="view-students-link">View
                             Students</a></li>
-                    <li><a href="#add-students" id="add-student-link">Add
+                    <li><a href="/add-students" id="add-student-link">Add
                             Student</a></li>
                 </ul>
             </nav>
@@ -47,6 +38,7 @@
             </section>
             <section id="students">
                 <div class="container">
+
                     <h1>Student List</h1>
                     <table class="student-table">
                         <thead>
@@ -59,22 +51,27 @@
                                 <th>Actions</th>
                             </tr>
                         </thead>
+
                         <tbody>
 
+                            <% studentsmanagement.forEach((record)=>{ %>
                             <tr>
-                                <td> nishan</td>
-                                <td> laxmimarga</td>
-                                <td>980000</td>
-                                <td>BCA</td>
-                                <td> b+</td>
+                                <td><%- record.name %></td>
+                                <td><%- record.address %></td>
+                                <td><%- record.contact %></td>
+                                <td><%- record.class %></td>
+                                <td><%- record.bloodgroup %></td>
                                 <td>
                                     <button class="btn edit-btn">Edit</button>
                                     <button class="btn delete-btn">Delete</button>
                                 </td>
                             </tr>
+                            <% }) %>
 
                         </tbody>
+
                     </table>
+
                 </div>
             </section>
             <!-- adding students -->
