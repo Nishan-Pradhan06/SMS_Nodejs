@@ -8,6 +8,12 @@ app.get('/', (req, res) => {
     res.render("index")//rendering index page                           
 })
 
+//rendering dashboard form page
+app.get('/dashboard', (req, res) => {
+    res.render("dashboard")
+})
+
+
 //provding acess to the public floder where all the css and js file included
 app.use(express.static("public/"))
 
