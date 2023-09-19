@@ -1,4 +1,5 @@
 const express = require('express') ///require express package
+const { studentsmanagement } = require('./model/index')
 const app = express() //calling the express in app varible
 
 app.set('view engine', 'ejs') // setting the  view engine to ejs
@@ -14,14 +15,33 @@ app.use(express.static("public/"))
 require("./model/index")
 
 //rendering createStudents form page
-app.get('createStudents', (req, res) => {
+app.get('/createStudents', (req, res) => {
     res.render("createStudents")
 })
 
+//form bata data aairaxa parse gar na vha or handel gar vhaneko ho
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 //creating post methond to create or add the data
-app.post('/createStudents', (req, res) => {
-    const { fullName, address, contact, faculty, bloodGroup } = res.body
-    
+app.post('/addStudents', async (req, res) => {
+    console.log(req.body)
+    const name = req.body.name
+    const address = req.body.address
+    const contact = req.body.contact
+    const stdFaculty = req.body.class
+    const bloodgroup = req.body.bloodgroup
+
+    await studentsmanagement.create({
+        name: name,
+        address: address,
+        contact: contact,
+        class: stdFaculty,
+        bloodgroup: bloodgroup,
+        // stdaddress: stdAddress,
+    })
+    res.redirect("/")
+
 })
 
 
