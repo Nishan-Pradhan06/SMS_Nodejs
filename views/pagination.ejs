@@ -1,0 +1,55 @@
+
+        <style>
+        .pagination {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+
+        .pagination li {
+            margin: 0 5px;
+        }
+
+        .pagination a {
+            display: block;
+            padding: 8px 16px;
+            text-decoration: none;
+            background-color: #f2f2f2;
+            color: #333;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .pagination a:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .pagination .active a {
+            background-color: #333;
+            color: #fff;
+        }
+
+        @media screen and (max-width: 600px) {
+            .pagination {
+                flex-direction: column;
+                align-items: center;
+            }
+            .pagination li {
+                margin: 5px 0;
+            }
+        }
+    </style>
+    </head>
+    <body>
+        <ul class="pagination">
+            <li><a href="#">&laquo; Previous</a></li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">Next &raquo;</a></li>
+        </ul>
+    </body>

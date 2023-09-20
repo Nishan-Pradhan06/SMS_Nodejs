@@ -2,12 +2,34 @@ const express = require('express') ///require express package
 const { studentsmanagement } = require('./model/index')
 const app = express() //calling the express in app varible
 
+
+//engine
 app.set('view engine', 'ejs') // setting the  view engine to ejs
 
+//provding acess to the public floder where all the css and js file included
+app.use(express.static("public/"))
+
+//adding database mysql
+require("./model/index")
+
+//form bata data aairaxa parse gar na vha or handel gar vhaneko ho
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+
+//pages
+
+
+
 app.get("/", async (req, res) => {
-    const std_management = await studentsmanagement.findAll()
-    console.log(std_management.length)
+    const std_management = await studentsmanagement.findAll() //couting the number of students
+    console.log(std_management.length) 
     res.render("index", { studentsmanagement: std_management, allstudents: std_management.length })//rendering index page                           
+})
+
+//rendering createStudents form page
+app.get("/createStudents", (req, res) => {
+    res.render("createStudents")
 })
 
 // //rendering dashboard form page
@@ -18,23 +40,6 @@ app.get("/", async (req, res) => {
 
 //     // res.render("dashboard")
 // })
-
-
-//provding acess to the public floder where all the css and js file included
-app.use(express.static("public/"))
-
-//adding database mysql
-require("./model/index")
-
-//rendering createStudents form page
-app.get("/createStudents", (req, res) => {
-    res.render("createStudents")
-})
-
-//form bata data aairaxa parse gar na vha or handel gar vhaneko ho
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
 //creating post methond to create or add the data
 app.post("/addStudents", async (req, res) => {
     // console.log(req.body)
