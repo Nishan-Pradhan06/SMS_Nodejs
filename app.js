@@ -20,10 +20,11 @@ app.use(express.urlencoded({ extended: true }));
 //pages
 
 
-
+//rendering index file form page
 app.get("/", async (req, res) => {
     const std_management = await studentsmanagement.findAll() //couting the number of students
-    console.log(std_management.length) 
+    console.log(std_management.length)
+  
     res.render("index", { studentsmanagement: std_management, allstudents: std_management.length })//rendering index page                           
 })
 
@@ -61,6 +62,14 @@ app.post("/addStudents", async (req, res) => {
 
 })
 
+
+// app.update("/addstudent", (req, res) => {
+//     const id = req.params;
+
+// })
+app.get("/update/:id", (req, res) => {
+    console.log(req.params.id)
+})
 
 //setting the port on 8000  
 app.listen(3000, () => {

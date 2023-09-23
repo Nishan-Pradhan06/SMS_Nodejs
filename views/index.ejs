@@ -21,17 +21,7 @@
         <!-- header top navigation bar -->
         <%- include("header") %>
         <!-- side navigation bar -->
-        <aside>
-            <nav class="sidebar">
-                <ul>
-                    <li><a href="/dashboard" id="dashboard-link">Dashboard</a></li>
-                    <li><a href="/students" id="view-students-link">View
-                            Students</a></li>
-                    <li><a href="/add-students" id="add-student-link">Add
-                            Student</a></li>
-                </ul>
-            </nav>
-        </aside>
+
         <main class="content">
             <section id="dashboard">
                 <%- include("dashboard") %>
@@ -62,8 +52,11 @@
                                 <td><%- record.class %></td>
                                 <td><%- record.bloodgroup %></td>
                                 <td>
-                                    <button class="btn edit-btn">Edit</button>
-                                    <button class="btn delete-btn">Delete</button>
+                                    <button class="btn edit-btn"><a
+                                            class="btn edit-btn"
+                                            href="/createStudents/:id">Edit</a></button>
+                                    <button class="btn delete-btn"><a
+                                            class="btn delete-btn" href>Delete</a></button>
                                 </td>
                             </tr>
                             <% }) %>
@@ -80,7 +73,7 @@
                 <%- include("createStudents") %>
             </section>
         </main>
-        <script src="../js/script.js"></script>
+
     </body>
 
 </html>
