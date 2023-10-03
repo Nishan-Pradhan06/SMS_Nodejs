@@ -1,40 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>adding-students</title>
-        <!-- <link rel="stylesheet" href="../css/add_students.css"> -->
-        <link rel="stylesheet" href="../css/add_students.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <title>Student Management Dashboard</title>
     </head>
+
     <body>
+        <main class="content">
+            <header>
+                <div class="logo"><img src="../img/logo.png" alt="img"
+                        style="height: 60px;width: 60px;"></div>
+                <div class="user-menu">
+                    <span>Welcome, Admin!</span>
+                    <a href="#">Profile</a>
+                    <a href="#">Notifications</a>
+                    <a href="#">Logout</a>
+                </div>
+            </header>
+            <aside>
+                <nav class="sidebar">
+                    <ul>
+                        <li><a href="/dashboard" id="dashboard-link">Dashboard</a></li>
+                        <li><a href="/createstudents" id="add-student-link">Add Student</a></li>
+                        <li><a href="/studentlists" id="view-students-link">View Students</a></li>
+                        <li><a href="/library" id="view-students-link">Library</a></li>
+                    </ul>
+                </nav>
+            </aside>
 
-        <div class="std-container">
-            <h1>Add Student Details</h1>
-            <form action="/addStudents" method="post">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+        </main>
+        <main class="allcontent">
+            <section id="add-students">
 
-                <label for="address">Address:</label>
-                <input type="text" id="address" name="address" required>
+                <div class="std-container">
+                    <h1>Add Student Details</h1>
+                    <form action="/createstudent" method="post">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
 
-                <label for="contact">Contact:</label>
-                <input type="tel" id="contact" name="contact" required>
+                        <label for="address">Address:</label>
+                        <input type="text" id="address" name="address" required>
 
-                <label for="class">Faculty:</label>
-                <select id="class" name="class" required>
-                    <option value="BCA">BCA</option>
-                    <option value="BBA">BBA</option>
-                    <option value="BHM">BHM</option>
-                </select>
+                        <label for="contact">Contact:</label>
+                        <input type="tel" id="contact" name="contact" required>
 
-                <label for="bloodgroup">Blood Group:</label>
-                <input type="text" id="bloodgroup" name="bloodgroup">
+                        <label for="class">Faculty:</label>
+                        <select id="class" name="class" required>
+                            <option value="BCA">BCA</option>
+                            <option value="BBA">BBA</option>
+                            <option value="BHM">BHM</option>
+                        </select>
 
-                <button type="submit" class="btn submit-btn">Submit</button>
-                <button type="reset" class="btn reset-btn">Reset</button>
-            </form>
-        </div>
+                        <label for="bloodgroup">Blood Group:</label>
+                        <input type="text" id="bloodgroup" name="bloodgroup">
+                        <div class="btn">
+                            <button type="submit" class="btn submit-btn">Submit</button>
+                            <button type="reset" class="btn reset-btn">Reset</button>
+                        </div>
+
+                    </form>
+                </div>
+            </section>
+        </main>
 
     </body>
+
 </html>

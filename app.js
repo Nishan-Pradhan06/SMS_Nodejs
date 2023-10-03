@@ -1,77 +1,68 @@
-const express = require('express') ///require express package
-const { studentsmanagement } = require('./model/index')
-const app = express() //calling the express in app varible
+// Import necessary packages and modules
+const express = require('express'); // Import the Express framework
+const { studentsmanagement } = require('./model/index'); // Import the studentsmanagement model
+const app = express(); // Create an Express application
 
+// Configure the view engine as EJS
+app.set('view engine', 'ejs');
 
-//engine
-app.set('view engine', 'ejs') // setting the  view engine to ejs
+// Serve static files from the "public" folder (e.g., CSS and JS files)
+app.use(express.static("public/"));
 
-//provding acess to the public floder where all the css and js file included
-app.use(express.static("public/"))
+// Connect to the MySQL database (assuming this is done in the "./model/index" file)
 
-//adding database mysql
-require("./model/index")
-
-//form bata data aairaxa parse gar na vha or handel gar vhaneko ho
+// Parse incoming JSON and URL-encoded data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Define routes and their handlers
 
-//pages
-
-
-//rendering index file form page
+// Render the index page
 app.get("/", async (req, res) => {
-    const std_management = await studentsmanagement.findAll() //couting the number of students
-    console.log(std_management.length)
-  
-    res.render("index", { studentsmanagement: std_management, allstudents: std_management.length })//rendering index page                           
-})
+    const studentList = await studentsmanagement.findAll(); // Retrieve all students
+    res.render("index", { studentsmanagement: studentList });
+});
 
-//rendering createStudents form page
-app.get("/createStudents", (req, res) => {
-    res.render("createStudents")
-})
+// Render the dashboard page
+app.get("/dashboard", async (req, res) => {
+    const studentCount = await studentsmanagement.findAll(); // Retrieve all students
+    res.render("dashboard", { allstudents: studentCount.length });
+});
 
-// //rendering dashboard form page
-// app.get("/dashboard", async (req, res) => {
-//     const allstudent = await studentsmanagement.findAll()
-//     // console.log(allstudent.length)
-//     res.render("dashboard");
+// Render the createStudents form page
+app.get("/createstudents", (req, res) => {
+    res.render("createStudents");
+});
 
-//     // res.render("dashboard")
-// })
-//creating post methond to create or add the data
-app.post("/addStudents", async (req, res) => {
-    // console.log(req.body)
-    const name = req.body.name
-    const address = req.body.address
-    const contact = req.body.contact
-    const stdFaculty = req.body.class
-    const bloodgroup = req.body.bloodgroup
+// Render the studentlists page (You may want to fix the path)
+app.get("/studentlists", (req, res) => {
+    res.render("viewstudent"); // Check the correct path for rendering
+});
+
+// Handle POST request to add a new student
+app.post("/createstudent", async (req, res) => {
+    const { name, address, contact, class: stdFaculty, bloodgroup } = req.body;
 
     await studentsmanagement.create({
-        name: name,
-        address: address,
-        contact: contact,
+        name,
+        address,
+        contact,
         class: stdFaculty,
-        bloodgroup: bloodgroup,
-        // stdaddress: stdAddress,
-    })
-    res.redirect("/")
+        bloodgroup,
+    });
 
-})
+    res.redirect("/studentlists");
+});
 
+// Handle the update route (you need to implement this)
 
-// app.update("/addstudent", (req, res) => {
-//     const id = req.params;
-
-// })
+// Handle GET request to update a specific student
 app.get("/update/:id", (req, res) => {
-    console.log(req.params.id)
-})
+    const studentId = req.params.id;
+    console.log("Updating student with ID:", studentId);
+});
 
-//setting the port on 8000  
+// Start the server on port 3000
 app.listen(3000, () => {
-    console.log("Server is running on 3000 port")
-})
+    console.log("Server is running on port 3000");
+});
