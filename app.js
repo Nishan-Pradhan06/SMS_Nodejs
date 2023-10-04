@@ -18,9 +18,11 @@ app.use(express.urlencoded({ extended: true }));
 // Define routes and their handlers
 
 // Render the index page
+app.get("/dash", async (req, res) => {
+    res.render("index");
+});
 app.get("/", async (req, res) => {
-    const studentList = await studentsmanagement.findAll(); // Retrieve all students
-    res.render("index", { studentsmanagement: studentList });
+    res.render("auth/login");
 });
 
 // Render the dashboard page
@@ -34,9 +36,19 @@ app.get("/createstudents", (req, res) => {
     res.render("createStudents");
 });
 
-// Render the studentlists page (You may want to fix the path)
+// Render the studentlists page 
 app.get("/studentlists", (req, res) => {
     res.render("viewstudent"); // Check the correct path for rendering
+});
+
+// Render the library page 
+app.get("/library", (req, res) => {
+    res.render("library"); // Check the correct path for rendering
+});
+
+// Render the library page 
+app.get("/login", (req, res) => {
+    res.render("auth/login"); // Check the correct path for rendering
 });
 
 // Handle POST request to add a new student
