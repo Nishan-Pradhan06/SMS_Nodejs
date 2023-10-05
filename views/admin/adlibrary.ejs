@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Student Management Dashboard</title>
+    <style>
+        /* Basic CSS for card layout */
+        .semester-card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 10px;
+            width: 300px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            background-color: #fff;
+        }
+
+        /* CSS for semester name */
+        .semester-name {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* CSS for book details */
+        .book-details {
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="content">
+        <header>
+            <div class="logo"><img src="../img/logo.png" alt="img" style="height: 60px;width: 60px;"></div>
+            <div class="user-menu">
+                <span>Welcome, Admin!</span>
+                <a href="#">Profile</a>
+                <a href="#">Notifications</a>
+                <a href="/login">Logout</a>
+            </div>
+        </header>
+        <aside>
+            <nav class="sidebar">
+                <ul>
+                    <li><a href="/admin/dashboard" class="nav-link" id="dashboard-link">Dashboard</a></li>
+                    <li><a href="/admin/createstudents" class="nav-link" id="add-student-link">Add Student</a></li>
+                    <li><a href="/admin/studentlists" class="nav-link" id="view-students-link">View Students</a></li>
+                    <li><a href="/admin/library" class="nav-link" id="view-students-link">Library</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+
+    </main>
+    <main class="allcontent">
+        <section>
+            <div class="semester-card">
+                <div class="semester-name">Spring 2023</div>
+                <div class="book-details">
+                    <div>Book Name 1</div>
+                    <div>Issue Date: January 1, 2023</div>
+                    <div>Return Date: February 1, 2023</div>
+                </div>
+                <div class="book-details">
+                    <div>Book Name 2</div>
+                    <div>Issue Date: March 1, 2023</div>
+                    <div>Return Date: April 1, 2023</div>
+                </div>
+            </div>
+
+            <div class="semester-card">
+                <div class="semester-name">Summer 2023</div>
+                <div class="book-details">
+                    <div>Book Name 3</div>
+                    <div>Issue Date: May 1, 2023</div>
+                    <div>Return Date: June 1, 2023</div>
+                </div>
+                <div class="book-details">
+                    <div>Book Name 4</div>
+                    <div>Issue Date: July 1, 2023</div>
+                    <div>Return Date: August 1, 2023</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>

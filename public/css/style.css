@@ -106,6 +106,8 @@ ul li:hover ul {
     }
 }
 
+/* dashboard section */
+
 .dashboard {
     max-width: 400px;
     margin: 0 auto;
@@ -138,6 +140,7 @@ ul li:hover ul {
     font-weight: bold;
 }
 
+/* createstudent section */
 .std-container {
     max-width: 500px;
     margin: 0 auto;
@@ -178,7 +181,7 @@ select {
 
 
 
-
+/* view student list section */
 
 .list-container {
     max-width: 950px;
@@ -211,6 +214,8 @@ select {
 .student-table tr:hover {
     background-color: #f0f0f0;
 }
+
+/* button css */
 
 .btn {
     padding: 8px 16px;
@@ -253,3 +258,4 @@ a {
     text-decoration: none;
 
 }
+

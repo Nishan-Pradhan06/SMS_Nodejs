@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Student Management Dashboard</title>
+</head>
+
+<body>
+    <main class="content">
+        <header>
+            <div class="logo"><img src="../img/logo.png" alt="img" style="height: 60px;width: 60px;"></div>
+            <div class="user-menu">
+                <span>Welcome, Admin!</span>
+                <a href="#">Profile</a>
+                <a href="#">Notifications</a>
+                <a href="/login">Logout</a>
+            </div>
+        </header>
+        <aside>
+            <nav class="sidebar">
+                <ul>
+                    <li><a href="/admin/dashboard" class="nav-link" id="dashboard-link">Dashboard</a></li>
+                    <li><a href="/admin/createstudents" class="nav-link" id="add-student-link">Add Student</a></li>
+                    <li><a href="/admin/studentlists" class="nav-link" id="view-students-link">View Students</a></li>
+                    <li><a href="/admin/library" class="nav-link" id="view-students-link">Library</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+    </main>
+    <main class="allcontent">
+        <section id="students">
+            <div class="list-container">
+                <h1>Student List</h1>
+                <table class="student-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>Contact</th>
+                            <th>Faculty</th>
+                            <th>Blood Group</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Nishan Pradhan</td>
+                            <td>Laxmimarga</td>
+                            <td>9817326306</td>
+                            <td>BCA</td>
+                            <td>A+</td>
+                            <td>
+                                <div class="btn">
+                                    <button class="btn submit-btn"><a href="#">Edit</a></button>
+                                    <button class="btn reset-btn"><a href="#">Delete</a></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <br>
+        <%- include("pagination") %>
+    </main>
+
+</body>
+
+</html>

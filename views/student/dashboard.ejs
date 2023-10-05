@@ -13,7 +13,7 @@
         <header>
             <div class="logo"><img src="../img/logo.png" alt="img" style="height: 60px;width: 60px;"></div>
             <div class="user-menu">
-                <span>Welcome, Admin!</span>
+                <span>Welcome, Student!</span>
                 <a href="#">Profile</a>
                 <a href="#">Notifications</a>
                 <a href="/login">Logout</a>
@@ -22,27 +22,26 @@
         <aside>
             <nav class="sidebar">
                 <ul>
-                    <li><a href="/dashbaord" id="dashboard-link">Dashboard</a></li>
-                    <li><a href="/createstudents" id="add-student-link">Add Student</a></li>
-                    <li><a href="/studentlists" id="view-students-link">View Students</a></li>
-                    <li><a href="/library" id="view-students-link">Library</a></li>
+                    <li><a href="/student/dashboard" id="dashboard-link">Dashboard</a></li>
+                    <li><a href="/student/homework" id="add-student-link">HomeWork</a></li>
+                    <li><a href="/student/onlineclass" id="view-students-link">Online Class</a></li>
+                    <li><a href="/student/library" id="view-students-link">Library</a></li>
                 </ul>
             </nav>
         </aside>
-     
 
     </main>
     <main class="allcontent">
-           <section id="dashboard">
+        <section id="dashboard">
             <section id="dashboard">
                 <div class="dashboard">
                     <h1 class="dashboard-title">Dashboard</h1>
                     <div class="count-box">
-                        <h3>Total Students</h3>
+                        <h3>Assignments</h3>
                         <div class="count"><%- allstudents %></div>
                     </div>
                     <div class="count-box">
-                        <h3>Total Teachers</h3>
+                        <h3>Incompleted assignment</h3>
                         <div class="count">10</div>
                     </div>
                 </div>
