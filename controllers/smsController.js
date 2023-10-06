@@ -1,4 +1,4 @@
-const { studentsmanagement } = require("../../model");
+const { studentsmanagement } = require("../model");
 
 
 //administrator page

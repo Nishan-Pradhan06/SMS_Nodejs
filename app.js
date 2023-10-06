@@ -1,7 +1,7 @@
 // Import necessary packages and modules
 const express = require('express'); // Import the Express framework
 // const { studentsmanagement } = require('./model/index'); // Import the studentsmanagement model
-const { renderAuthLogin, renderAdmin, renderCreatestd, renderAdminDashboard, renderViewStudentlists, renderLibrary, renderPostCreatestd, renderStdHome, renderStdDashboard, renderStdLibrary, renderStdOnlineClass, renderStdHW } = require('./controllers/sms/smsController');
+// const { renderAuthLogin, renderAdmin, renderCreatestd, renderAdminDashboard, renderViewStudentlists, renderLibrary, renderPostCreatestd, renderStdHome, renderStdDashboard, renderStdLibrary, renderStdOnlineClass, renderStdHW } = require('./controllers/smsController');
 const app = express(); // Create an Express application
 
 app.set('view engine', 'ejs');// Configure the view engine as EJS
@@ -19,7 +19,7 @@ const authRoute = require("./routes/authRoute")
 const stdRoute = require("./routes/stdRoute")
 app.use("", authRoute)
 app.use("", adminRoute)
-app.use("",stdRoute)
+app.use("", stdRoute)
 // Define routes and their handlers
 // app.get("/login", renderAuthLogin);//auth route page
 

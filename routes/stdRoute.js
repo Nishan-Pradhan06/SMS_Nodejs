@@ -1,4 +1,4 @@
-const { renderStdHome, renderStdHW, renderStdOnlineClass, renderStdLibrary, renderStdDashboard } = require("../controllers/sms/smsController");
+const { renderStdHome, renderStdHW, renderStdOnlineClass, renderStdLibrary, renderStdDashboard } = require("../controllers/smsController");
 
 const router = require("express").Router()
 

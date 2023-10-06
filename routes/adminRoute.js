@@ -1,4 +1,4 @@
-const { renderAdmin, renderAdminDashboard, renderCreatestd, renderPostCreatestd, renderViewStudentlists, renderLibrary } = require("../controllers/sms/smsController")
+const { renderAdmin, renderAdminDashboard, renderCreatestd, renderPostCreatestd, renderViewStudentlists, renderLibrary } = require("../controllers/smsController")
 
 const router = require("express").Router()
 

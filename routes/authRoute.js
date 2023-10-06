@@ -1,4 +1,4 @@
-const { renderAuthLogin } = require("../controllers/sms/smsController");
+const { renderAuthLogin } = require("../controllers/smsController");
 
 const router = require("express").Router();
 
